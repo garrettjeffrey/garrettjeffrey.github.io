@@ -9,12 +9,14 @@
 }
 
 body[data-theme='dark'] {
-  --bg: #050608;
-  --card: rgba(12, 14, 20, 0.85);
-  --fg: #f7f7f7;
-  --muted: #8d91a0;
-  --accent: #7a6afa;
-  --accent-soft: rgba(122, 106, 250, 0.12);
+  --bg: #111111;
+  --card: #1a1a1a;
+  --fg: #ffffffea;
+  --muted: #ffffff99;
+  --accent: #3b82f6;
+  --accent-soft: rgba(59, 130, 246, 0.15);
+  --border: #2a2a2a;
+  --shadow: 0 30px 70px rgba(0, 0, 0, 0.65);
 }
 
 body[data-theme='light'] {
@@ -41,8 +43,8 @@ body {
   color: var(--fg);
   padding: clamp(1.5rem, 3vw, 3rem);
   transition: background 0.5s ease, color 0.5s ease;
-  background-image: radial-gradient(circle at 20% 20%, rgba(122, 106, 250, 0.2), transparent 35%),
-    radial-gradient(circle at 80% 0%, rgba(78, 223, 255, 0.25), transparent 30%);
+  background-image: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.03), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(59, 130, 246, 0.12), transparent 35%);
 }
 
 .shell {
@@ -59,8 +61,8 @@ body {
   gap: 2rem;
   padding: clamp(1.5rem, 4vw, 3rem);
   border-radius: calc(var(--radius) + 10px);
-  background: linear-gradient(135deg, rgba(122, 106, 250, 0.2), rgba(10, 12, 20, 0.9));
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(32, 32, 32, 0.95), rgba(19, 19, 19, 0.95));
+  border: 1px solid var(--border);
   box-shadow: var(--shadow);
   margin-bottom: clamp(2rem, 5vw, 3.5rem);
 }
@@ -78,9 +80,9 @@ body[data-theme='light'] .hero {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--fg);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.78);
   font-size: 0.85rem;
   letter-spacing: 0.04em;
   padding: 0.3rem 0.9rem;
@@ -110,7 +112,7 @@ body[data-theme='light'] .status-chip {
 
 .tagline {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.72);
   margin: 0;
 }
 
@@ -160,6 +162,10 @@ body[data-theme='light'] .theme-toggle {
   border-color: rgba(15, 23, 42, 0.2);
 }
 
+body[data-theme='dark'] .theme-toggle {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
 .theme-toggle:hover,
 .theme-toggle:focus-visible {
   transform: translateY(-1px);
@@ -177,12 +183,12 @@ section.card {
   border-radius: var(--radius);
   padding: 1.75rem;
   border: 1px solid var(--border);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(12px);
 }
 
 .accent-card {
-  background: linear-gradient(145deg, var(--accent-soft), rgba(0, 0, 0, 0.1)), var(--card);
+  background: linear-gradient(145deg, rgba(59, 130, 246, 0.12), rgba(0, 0, 0, 0.15)), var(--card);
 }
 
 .projects-card {
@@ -210,7 +216,7 @@ section.card {
 }
 
 .section-body {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.82);
 }
 
 body[data-theme='light'] .section-body {
@@ -227,7 +233,7 @@ body[data-theme='light'] .section-body {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: calc(var(--radius) - 6px);
   padding: 1.25rem;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(180deg, rgba(28, 28, 28, 0.95), rgba(18, 18, 18, 0.95));
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
@@ -268,8 +274,8 @@ body[data-theme='light'] .project {
   gap: 0.4rem;
   border-radius: 999px;
   padding: 0.3rem 0.95rem;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   font-size: 0.9rem;
 }
 
@@ -300,8 +306,8 @@ body[data-theme='light'] .pill {
   color: var(--fg);
   padding: 0.9rem 1.1rem;
   border-radius: calc(var(--radius) - 10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(24, 24, 24, 0.92);
   transition: border-color 0.2s, transform 0.2s;
 }
 
@@ -400,4 +406,3 @@ footer {
     transition: none !important;
   }
 }
-
